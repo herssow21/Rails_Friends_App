@@ -1,0 +1,12 @@
+<td style="color: green"><%= notice %></td>
+
+<div id="friends">
+  <% @friends.each do |friend| %>
+    <%= render friend %>
+    <td>
+      <%= link_to "Show this friend", friend %>
+    </td>
+  <% end %>
+</div>
+
+<%= link_to "New friend", new_friend_path, class:"btn btn-lg-dark" %>
