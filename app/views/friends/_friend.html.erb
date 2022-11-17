@@ -4,11 +4,20 @@
       <tr>
         <td><%= friend.first_name %></td>    
         <td><%= friend.last_name %></td>
+        <td><%= friend.title%></td>
         <td><%= friend.email %></td>
         <td><%= friend.phone %>  </td>
         <td><%= friend.facebook %></td>
+        <td><%= friend.user_id%></td>
         <td><%= link_to "Show", friend ,class:"btn btn-success btn-sm"%></td>
         <td><%= link_to "Edit", edit_friend_path(friend),class:"btn btn-warning btn-sm" %></td>
-        <td><%= button_to "Destroy", friend, method: :delete,class:"btn btn-sm btn-danger" %></td> 
+        <td><%= link_to "Destroy", friend_path(friend), data: {
+                    turbo_method: :delete,
+                   turbo_confirm: "Are you sure?"
+                }, class:"btn btn-sm btn-danger" %>
+        </td> 
       </tr>
 </div> 
+
+
+
